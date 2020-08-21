@@ -36,11 +36,6 @@ class Message(models.Model):
 
 class ForwardedMessage(models.Model):
     "Generated Model"
-    message = models.ForeignKey(
-        "chat.Message",
-        on_delete=models.CASCADE,
-        related_name="forwardedmessage_message",
-    )
     forwarded_by = models.ForeignKey(
         "chat_user_profile.Profile",
         on_delete=models.CASCADE,
